@@ -1,0 +1,3 @@
+<Bindings>
+  <Binding name="NOTEPAD_TOGGLE" header="NOTEPAD" category="ADDONS">Notepad_Toggle()</Binding>
+</Bindings>

@@ -1,0 +1,24 @@
+<Bindings>
+	<Binding name="INVENRAIDFRAMES3_OPTION" header="INVENRAIDFRAMES3" category="ADDONS">
+		InvenRaidFrames3:OnClick("LeftButton")
+	</Binding>
+	<Binding name="CLICK InvenRaidFrames3Overlord:LeftButton" category="ADDONS"/>
+	<Binding name="INVENRAIDFRAMES3_DOREADYCHECK" category="ADDONS">
+		if InvenRaidFrames3:IsLeader() then
+			DoReadyCheck()
+		end
+	</Binding>
+	<Binding name="INVENRAIDFRAMES3_INITIATEROLEPOLL" category="ADDONS">
+		if InvenRaidFrames3:IsLeader() then
+			InitiateRolePoll()
+		end
+	</Binding>
+
+	<Binding name="CLICK IRF3PartyTarget:LeftButton" category="ADDONS"/>
+	<Binding name="CLICK IRF3PartyTarget:RightButton" category="ADDONS"/>
+	<Binding name="CLICK IRF3RaidTarget:LeftButton" category="ADDONS"/>
+	<Binding name="CLICK IRF3RaidTarget:RightButton" category="ADDONS"/>
+	<Binding name="CLICK IRF3RaidTargetMelee:LeftButton" category="ADDONS"/>
+	<Binding name="CLICK IRF3RaidTargetMelee:RightButton" category="ADDONS"/>
+
+</Bindings>

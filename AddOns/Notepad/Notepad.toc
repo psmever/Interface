@@ -1,0 +1,19 @@
+## Interface: 30403
+## Title: Notepad
+## Author: Atair
+## Version: 1.4.9
+## Notes: Manage general and character-specific notes
+## Notes-deDE: Verwaltung allgemeiner und charakterspezifischer Notizen
+## Notes-ruRU: Управляйте общими и специфичными для персонажа заметками
+## DefaultState: Enabled
+## LoadOnDemand: 0
+## SavedVariables: Notepad_Vars
+## SavedVariablesPerCharacter: Notepad_CVars
+
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+libs\LibDBIcon-1.0\LibDBIcon-1.0.lua
+libs\LibSharedMedia-3.0\lib.xml
+
+Notepad.xml

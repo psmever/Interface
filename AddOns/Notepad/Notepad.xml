@@ -1,0 +1,351 @@
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+
+
+<Script file="Notepad.lua"/>
+<Script file="Notepad_locale_de.lua"/>
+<Script file="Notepad_locale_en.lua"/>
+<Script file="Notepad_locale_ru.lua"/>
+
+
+<!-- templates -->
+<Button name="NotepadNoteTitleTemplate" hidden="false" virtual="true">
+  <Size x="347" y="16"/>
+  <Layers>
+    <Layer level="BACKGROUND">
+      <FontString name="$parentSubText" inherits="GameFontNormalSmall" justifyH="LEFT"/>
+    </Layer>
+  </Layers>
+  <ButtonText name="$parentText">
+    <Size x="347" y="13"/>
+  </ButtonText>
+  <NormalFont style="GameFontNormalLeft"/>
+  <HighlightFont style="GameFontHighlightLeft"/>
+  <DisabledFont style="GameFontDisableLeft"/>
+  <Scripts>
+    <OnClick>NotepadNoteTitle_OnClick(self)</OnClick>
+    <OnLoad>self:SetFrameLevel(self:GetFrameLevel() + 1)</OnLoad>
+  </Scripts>
+</Button>
+
+<!-- Notepad window -->
+<Frame name="Notepad" topLevel="true" movable="true" parent="UIParent" enableMouse="true" hidden="true" inherits="ButtonFrameTemplate">
+  <Size x="384" y="512"/>
+  <HitRectInsets><AbsInset right="34" bottom="75"/></HitRectInsets>
+
+  <Layers>
+    <Layer level="BORDER">
+      <Texture file="Interface\MailFrame\Mail-Icon">
+        <Size x="60" y="60"/>
+        <Anchors>
+          <Anchor point="TOPLEFT"><Offset x="-4" y="8"/></Anchor>
+        </Anchors>
+      </Texture>
+    </Layer>
+  </Layers>
+
+  <Frames>
+    
+    <!-- note title section -->
+    <Frame name="NotepadTitleBar">
+      <Size y="16"/>
+      <Anchors>
+        <Anchor point="TOP" y="-5"/>
+        <Anchor point="LEFT" x="60"/>
+        <Anchor point="RIGHT" x="-25"/>
+      </Anchors>
+      <Scripts>
+        <OnDragStart>Notepad:StartMoving()</OnDragStart>
+        <OnDragStop>Notepad:StopMovingOrSizing()</OnDragStop>
+        <OnLoad>self:RegisterForDrag("LeftButton")</OnLoad>
+      </Scripts>
+    </Frame>
+
+    <!-- tabs -->
+    <Button name="NotepadGeneralTab" inherits="TabButtonTemplate" id="1">
+      <Anchors>
+        <Anchor point="TOPLEFT"><Offset x="65" y="-28"/></Anchor>
+      </Anchors>
+      <Scripts>
+        <OnClick>NotepadTab_OnClick(self)</OnClick>
+      </Scripts>
+    </Button>
+    <Button name="NotepadCharacterTab" inherits="TabButtonTemplate" id="2">
+      <Anchors>
+        <Anchor point="LEFT" relativeTo="NotepadGeneralTab" relativePoint="RIGHT"/>
+      </Anchors>
+      <Scripts>
+        <OnClick>NotepadTab_OnClick(self)</OnClick>
+      </Scripts>
+    </Button>
+    <Button name="NotepadSettingsTab" inherits="TabButtonTemplate" id="3">
+      <Size x="32" y="32"/>
+      <Anchors>
+        <Anchor point="TOPRIGHT"><Offset x="-3" y="-28"/></Anchor>
+      </Anchors>
+      <NormalTexture file="Interface\AddOns\Notepad\images\settings">
+        <Size x="12" y="12"/>
+      </NormalTexture>
+      <Scripts>
+        <OnClick>NotepadTab_OnClick(self)</OnClick>
+      </Scripts>
+    </Button>
+
+    <!-- note title section -->
+    <Frame name="NotepadNotesTitles">
+      <Size x="364" y="129"/>
+      <Anchors>
+        <Anchor point="TOPLEFT"><Offset x="10" y="-67"/></Anchor>
+      </Anchors>
+      <Frames>
+        <ScrollFrame name="NotepadTitleScrollFrame" inherits="FauxScrollFrameTemplate">
+          <Size x="342" y="129"/>
+          <Anchors>
+            <Anchor point="TOPRIGHT" relativePoint="TOPRIGHT"><Offset x="-22"/></Anchor>
+          </Anchors>
+          <Scripts>
+            <OnVerticalScroll>FauxScrollFrame_OnVerticalScroll(self, offset, 16, Notepad_Update)</OnVerticalScroll>
+          </Scripts>
+        </ScrollFrame>
+        <Button name="NotepadNoteTitle1" inherits="NotepadNoteTitleTemplate">
+          <Anchors>
+            <Anchor point="TOPLEFT"><Offset x="0" y="0"/></Anchor>
+          </Anchors>
+        </Button>
+        <Button name="NotepadNoteTitle2" inherits="NotepadNoteTitleTemplate">
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="NotepadNoteTitle1" relativePoint="BOTTOMLEFT"/>
+          </Anchors>
+        </Button>
+        <Button name="NotepadNoteTitle3" inherits="NotepadNoteTitleTemplate">
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="NotepadNoteTitle2" relativePoint="BOTTOMLEFT"/>
+          </Anchors>
+        </Button>
+        <Button name="NotepadNoteTitle4" inherits="NotepadNoteTitleTemplate">
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="NotepadNoteTitle3" relativePoint="BOTTOMLEFT"/>
+          </Anchors>
+        </Button>
+        <Button name="NotepadNoteTitle5" inherits="NotepadNoteTitleTemplate">
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="NotepadNoteTitle4" relativePoint="BOTTOMLEFT"/>
+          </Anchors>
+        </Button>
+        <Button name="NotepadNoteTitle6" inherits="NotepadNoteTitleTemplate">
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="NotepadNoteTitle5" relativePoint="BOTTOMLEFT"/>
+          </Anchors>
+        </Button>
+        <Button name="NotepadNoteTitle7" inherits="NotepadNoteTitleTemplate">
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="NotepadNoteTitle6" relativePoint="BOTTOMLEFT"/>
+          </Anchors>
+        </Button>
+        <Button name="NotepadNoteTitle8" inherits="NotepadNoteTitleTemplate">
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="NotepadNoteTitle7" relativePoint="BOTTOMLEFT"/>
+          </Anchors>
+        </Button>
+        <Frame name="NotepadNoteTitleHighlight" hidden="true">
+          <Layers>
+            <Layer level="ARTWORK">
+              <Texture name="NotepadNoteTitleHighlightTexture" file="Interface\Buttons\UI-Listbox-Highlight2" alphaMode="ADD"/>
+            </Layer>
+          </Layers>
+        </Frame>
+      </Frames>
+    </Frame>
+
+    <!-- note separator -->
+    <Frame name="NotepadSeparator">
+      <Size x="384" y="16"/>
+      <Anchors>
+        <Anchor point="TOPLEFT"><Offset x="-3" y="-195"/></Anchor>
+      </Anchors>
+      <Layers>
+        <Layer level="ARTWORK">
+          <Texture file="Interface\ClassTrainerFrame\UI-ClassTrainer-HorizontalBar">
+            <Size x="256" y="16"/>
+            <TexCoords bottom="0.25"/>
+          </Texture>
+          <Texture file="Interface\ClassTrainerFrame\UI-ClassTrainer-HorizontalBar">
+            <Size x="128" y="16"/>
+            <Anchors>
+              <Anchor point="TOPRIGHT"/>
+            </Anchors>
+            <TexCoords right="0.29296875" top="0.25" bottom="0.5"/>
+          </Texture>
+        </Layer>
+      </Layers>
+    </Frame>
+
+    <!-- note edit section -->
+    <Frame name="NotepadEdit">
+      <Size x="364" y="271"/>
+      <Anchors>
+        <Anchor point="TOPLEFT"><Offset x="10" y="-210"/></Anchor>
+      </Anchors>
+      <Layers>
+        <Layer level="ARTWORK">
+          <FontString name="NotepadEditTitle" inherits="GameFontNormalLarge" justifyH="LEFT">
+            <Size x="363" y="16"/>
+            <Anchors>
+              <Anchor point="TOPLEFT"><Offset x="4" y="-1"/></Anchor>
+            </Anchors>
+          </FontString>
+        </Layer>
+      </Layers>
+      <Frames>
+        <Frame name="NotepadEditBackdrop" inherits="TooltipBackdropTemplate">
+          <Size x="363" y="252"/>
+          <Anchors>
+            <Anchor point="TOPLEFT"><Offset y="-19"/></Anchor>
+          </Anchors>
+        </Frame>
+        <ScrollFrame name="NotepadEditScrollFrame" inherits="UIPanelScrollFrameTemplate">
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="NotepadEditBackdrop" relativePoint="TOPLEFT"><Offset x="9" y="-6"/></Anchor>
+            <Anchor point="BOTTOMRIGHT" relativeTo="NotepadEditBackdrop" relativePoint="BOTTOMRIGHT"><Offset x="-27" y="6"/></Anchor>
+          </Anchors>
+          <ScrollChild>
+            <EditBox name="NotepadEditBox" multiline="true" autoFocus="false" hyperLinksEnabled="true">
+              <Size x="327" y="240"/>
+              <FontString inherits="GameFontHighlightSmall"/>
+              <Scripts>
+                <OnEscapePressed>self:ClearFocus()</OnEscapePressed>
+                <OnHyperlinkClick>Notepad_OnHyperlinkClick(self, link, text, button)</OnHyperlinkClick>
+                <OnTextChanged>NotepadEditBox_OnTextChanged(self)</OnTextChanged>
+              </Scripts>
+            </EditBox>
+          </ScrollChild>
+        </ScrollFrame>
+        <Button>
+          <Size x="327" y="240"/>
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="NotepadEditBox"/>
+          </Anchors>
+          <Scripts>
+            <OnClick>if Notepad.SelectedNote then NotepadEditBox:SetFocus() end</OnClick>
+          </Scripts>
+        </Button>
+      </Frames>
+    </Frame>
+
+    <!-- settings page -->
+    <Frame name="NotepadSettings">
+      <Size x="364" y="414"/>
+      <Anchors>
+        <Anchor point="TOPLEFT"><Offset x="10" y="-67"/></Anchor>
+      </Anchors>
+      <Frames>
+        <CheckButton name="NotepadSettingsMinimapIconVisible" inherits="UICheckButtonTemplate">
+          <Anchors>
+            <Anchor point="TOPLEFT">
+              <Offset x="6" y="-4"/>
+            </Anchor>
+          </Anchors>
+          <Layers>
+            <Layer level="BACKGROUND">
+              <FontString name="NotepadSettingsMinimapIconVisibleLabel" inherits="GameFontNormalSmall">
+                <Anchors>
+                  <Anchor point="LEFT" relativePoint="RIGHT">
+                    <Offset y="1"/>
+                  </Anchor>
+                </Anchors>
+              </FontString>
+            </Layer>
+          </Layers>
+          <Scripts>
+            <OnClick>Notepad_ShowMinimapIcon(self:GetChecked())</OnClick>
+          </Scripts>
+        </CheckButton>
+        <Frame name="NotepadSettingsFontSelection" inherits="UIDropDownMenuTemplate">
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="NotepadSettingsMinimapIconVisible" relativePoint="TOPLEFT">
+              <Offset x="-13" y="-52"/>
+            </Anchor>
+          </Anchors>
+          <Layers>
+            <Layer level="BACKGROUND">
+              <FontString name="NotepadSettingsFontSelectionLabel" inherits="GameFontNormalSmall">
+                <Anchors>
+                  <Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+                    <Offset x="18" y="3"/>
+                  </Anchor>
+                </Anchors>
+              </FontString>
+            </Layer>
+          </Layers>
+        </Frame>
+        <Frame name="NotepadSettingsFontHeightSelection" inherits="UIDropDownMenuTemplate">
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="NotepadSettingsFontSelection" relativePoint="TOPRIGHT">
+              <Offset x="-20"/>
+            </Anchor>
+          </Anchors>
+          <Layers>
+            <Layer level="BACKGROUND">
+              <FontString name="NotepadSettingsFontHeightSelectionLabel" inherits="GameFontNormalSmall">
+                <Anchors>
+                  <Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+                    <Offset x="18" y="3"/>
+                  </Anchor>
+                </Anchors>
+              </FontString>
+            </Layer>
+          </Layers>
+        </Frame>
+      </Frames>
+    </Frame>
+
+    <!-- bottom buttons -->
+    <Button name="NotepadNewNoteButton" inherits="UIPanelButtonTemplate" text="NEW">
+      <Size x="95" y="22"/>
+      <Anchors>
+        <Anchor point="BOTTOMLEFT"><Offset x="2" y="4"/></Anchor>
+      </Anchors>
+      <Scripts>
+        <OnClick>NotepadNewNoteButton_OnClick()</OnClick>
+      </Scripts>
+    </Button>
+    <Button name="NotepadDeleteNoteButton" inherits="UIPanelButtonTemplate" text="DELETE">
+      <Size x="95" y="22"/>
+      <Anchors>
+        <Anchor point="LEFT" relativeTo="NotepadNewNoteButton" relativePoint="RIGHT"/>
+      </Anchors>
+      <Scripts>
+        <OnClick>NotepadDeleteNoteButton_OnClick()</OnClick>
+      </Scripts>
+    </Button>
+    <Button name="NotepadRenameNoteButton" inherits="UIPanelButtonTemplate">
+      <Size x="95" y="22"/>
+      <Anchors>
+        <Anchor point="LEFT" relativeTo="NotepadDeleteNoteButton" relativePoint="RIGHT"/>
+      </Anchors>
+      <Scripts>
+        <OnClick>NotepadRenameNoteButton_OnClick()</OnClick>
+      </Scripts>
+    </Button>
+    <Button name="NotepadSaveButton" inherits="UIPanelButtonTemplate">
+      <Size x="95" y="22"/>
+      <Anchors>
+        <Anchor point="LEFT" relativeTo="NotepadRenameNoteButton" relativePoint="RIGHT"/>
+      </Anchors>
+      <Scripts>
+        <OnClick>ReloadUI()</OnClick>
+      </Scripts>
+    </Button>
+
+  </Frames>
+
+  <Scripts>
+    <OnEvent>Notepad_OnEvent(self, event, ...)</OnEvent>
+    <OnHide>Notepad_OnHide()</OnHide>
+    <OnLoad>Notepad_OnLoad(self)</OnLoad>
+    <OnShow>Notepad_OnShow()</OnShow>
+  </Scripts>
+
+</Frame>
+
+
+</Ui>
