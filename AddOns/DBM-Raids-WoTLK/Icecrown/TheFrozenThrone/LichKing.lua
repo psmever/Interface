@@ -3,7 +3,7 @@ local L		= mod:GetLocalizedStrings()
 
 mod.statTypes = "normal,normal25,heroic,heroic25"
 
-mod:SetRevision("20231117104143")
+mod:SetRevision("20231107113735")
 mod:SetCreatureID(36597)
 mod:SetEncounterID(mod:IsClassic() and 856 or 1106)
 mod:DisableEEKillDetection()--EE fires at 10%

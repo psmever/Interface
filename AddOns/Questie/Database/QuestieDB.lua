@@ -153,7 +153,7 @@ function QuestieDB:Initialize()
             ReloadUI()
         end,
         OnDecline = function()
-            Questie.db.global.disableDatabaseWarnings = true
+            Questie.db.profile.disableDatabaseWarnings = true
         end,
         OnShow = function(self)
             self:SetFrameStrata("TOOLTIP")
@@ -398,23 +398,29 @@ function QuestieDB.IsLevelRequirementsFulfilled(questId, minLevel, maxLevel, pla
     --* QuestiePlayer.currentQuestlog[parentQuestId] logic is from QuestieDB.IsParentQuestActive, if you edit here, also edit there
     local parentQuestId = QuestieDB.QueryQuestSingle(questId, "parentQuest")
     if parentQuestId and QuestiePlayer.currentQuestlog[parentQuestId] then
+        -- If the quest is in the player's log already, there's no need to do any logic here, it must already be available
         return true
     end
 
     --* QuestieEvent.activeQuests[questId] logic is from QuestieDB.IsParentQuestActive, if you edit here, also edit there
-    if (not Questie.db.char.absoluteLevelOffset) and
+    if (Questie.db.profile.lowLevelStyle ~= Questie.LOWLEVEL_RANGE) and
         minLevel > requiredLevel and
         QuestieEvent.activeQuests[questId]  then
         return true
     end
 
+    if (Questie.IsSoD == true) and (QuestieDB.IsSoDRuneQuest(questId) == true) and (requiredLevel <= playerLevel) then
+        -- Season of Discovery Rune quests are still shown when trivial
+        return true
+    end
+
     if maxLevel >= level then
-        if (not Questie.db.char.lowlevel) and minLevel > level then
+        if (Questie.db.profile.lowLevelStyle ~= Questie.LOWLEVEL_ALL) and minLevel > level then
             -- The quest level is too low and trivial quests are not shown
             return false
         end
     else
-        if Questie.db.char.absoluteLevelOffset or maxLevel < requiredLevel then
+        if (Questie.db.profile.lowLevelStyle == Questie.LOWLEVEL_RANGE) or maxLevel < requiredLevel then
             -- Either an absolute level range is set and maxLevel < level OR the maxLevel is manually set to a lower value
             return false
         end
@@ -692,7 +698,7 @@ end
 
 ---@return number
 local _GetIconScale = function()
-    return Questie.db.global.objectScale or 1
+    return Questie.db.profile.objectScale or 1
 end
 
 ---@param questId QuestId

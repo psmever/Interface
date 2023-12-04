@@ -830,6 +830,7 @@ SLASH_INVENRAIDFRAMES37 = "/ㅑㄱㄹ"
 SLASH_INVENRAIDFRAMES38 = "/ㅑㄱㄹ3"
 local function handler(msg)
 local command, arg1 = strsplit(" ",msg)
+
 	if command == "s" and arg1 then
 		if InvenRaidFrames3DB.profiles[arg1] then
 			if not InCombatLockdown() then
@@ -845,6 +846,8 @@ local command, arg1 = strsplit(" ",msg)
 		end
 	elseif command == "s" then
 			IRF3:Message(L["Lime_profile_info"])
+	elseif command =="raidcheck" or command =="도핑체크" or command=="도핑" then
+		IRF3_RaidCheckFunc()
 	else
 		InvenRaidFrames3:OnClick("LeftButton")
 	end
@@ -901,6 +904,11 @@ local function runFunc()
 	end
 end
 
+local function runFunc2()
+--개별 도핑체크 함수
+	IRF3_RaidCheckFunc()
+end
+
 local function lockFunc()
 	IRF3.db.lock = not IRF3.db.lock
 end
@@ -929,6 +937,11 @@ local function initializeDropDown()
 	UIDropDownMenu_AddButton(info)
 	info.text = L["Lime_RoleCheck"]
 	info.func = InitiateRolePoll
+	UIDropDownMenu_AddButton(info)
+	info.notCheckable = true
+	info.text = L["도핑 체크"]
+	info.disabled=nil
+	info.func = runFunc2
 	UIDropDownMenu_AddButton(info)
 	info.disabled = nil
 	info.func = nil

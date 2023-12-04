@@ -145,6 +145,12 @@ function QuestieWotlkItemFixes:Load()
         [33123] = {
             [itemKeys.npcDrops] = {},
         },
+        [33284] = {
+            [itemKeys.class] = 12,
+        },
+        [33290] = {
+            [itemKeys.class] = 12,
+        },
         [33330] = {
             [itemKeys.npcDrops] = {23954},
         },
@@ -154,14 +160,8 @@ function QuestieWotlkItemFixes:Load()
         [33355] = {
             [itemKeys.npcDrops] = {},
         },
-        [33545] = {
-            [itemKeys.npcDrops] = {23931},
-        },
         [33558] = {
             [itemKeys.npcDrops] = {23967},
-        },
-        [33628] = {
-            [itemKeys.objectDrops] = {186659,186660,186661},
         },
         [33634] = {
             [itemKeys.class] = itemClasses.QUEST,
@@ -172,14 +172,17 @@ function QuestieWotlkItemFixes:Load()
         [34076] = {
             [itemKeys.class] = itemClasses.QUEST,
         },
+        [34112] = {
+            [itemKeys.npcDrops] = {24746},
+        },
         [34115] = {
             [itemKeys.npcDrops] = {24539},
         },
         [34116] = {
             [itemKeys.npcDrops] = {24788},
         },
-        [34118] = {
-            [itemKeys.objectDrops] = {186944},
+        [34120] = {
+            [itemKeys.npcDrops] = {24747},
         },
         [34123] = {
             [itemKeys.objectDrops] = {186946},
@@ -528,6 +531,9 @@ function QuestieWotlkItemFixes:Load()
         [45817] = {
             [itemKeys.objectDrops] = {194314},
         },
+        [45857] = {
+            [itemKeys.npcDrops] = {32867,32927},
+        },
         [45897] = {
             [itemKeys.npcDrops] = {33288},
         },
@@ -536,6 +542,18 @@ function QuestieWotlkItemFixes:Load()
         },
         [48418] = {
             [itemKeys.npcDrops] = {35451},
+        },
+        [49698] = {
+            [itemKeys.npcDrops] = {36670},
+        },
+        [49723] = {
+            [itemKeys.npcDrops] = {36494},
+        },
+        [49739] = {
+            [itemKeys.objectDrops] = {201590},
+        },
+        [49750] = {
+            [itemKeys.npcDrops] = {37094},
         },
         [49867] = {
             [itemKeys.npcDrops] = {37671,38065},
@@ -600,15 +618,15 @@ function QuestieWotlkItemFixes:Load()
             [itemKeys.name] = 'Defiler\'s Medallion',
             [itemKeys.relatedQuests] = {78752},
             [itemKeys.class] = 12,
-            [itemKeys.npcDrops] = {23954,26723,26861,26632,29306,27978,28923,29120,29311,31134,35451,36502,36658,36954},
-            [itemKeys.objectDrops] = {193597,193603},
+            [itemKeys.npcDrops] = {23954,26723,26861,26632,29306,27978,28923,29120,29311,31134,35451,36502,36658},
+            [itemKeys.objectDrops] = {193597,193603,202336},
         },
         [211207] = {
             [itemKeys.name] = 'Mysterious Artifact',
             [itemKeys.relatedQuests] = {78753},
             [itemKeys.class] = 12,
-            [itemKeys.npcDrops] = {23954,26723,26861,26632,29306,27978,28923,29120,29311,31134,35451,36502,36658,36954},
-            [itemKeys.objectDrops] = {193597,193603},
+            [itemKeys.npcDrops] = {23954,26723,26861,26632,29306,27978,28923,29120,29311,31134,35451,36502,36658},
+            [itemKeys.objectDrops] = {193597,193603,202336},
         },
     }
 end
@@ -622,4 +640,27 @@ function _QuestieWotlkItemFixes:InsertMissingItemIds()
     QuestieDB.itemData[200068] = {} -- Teleport Scroll: Shattrath City
     QuestieDB.itemData[211206] = {} -- Defiler's Medallion
     QuestieDB.itemData[211207] = {} -- Mysterious Artifact
+end
+
+-- This should allow manual fix for item availability
+function QuestieWotlkItemFixes:LoadFactionFixes()
+    local itemKeys = QuestieDB.itemKeys
+
+    local itemFixesHorde = {
+        [49698] = {
+            [itemKeys.npcDrops] = {36669},
+        },
+    }
+
+    local itemFixesAlliance = {
+        [49698] = {
+            [itemKeys.npcDrops] = {36670},
+        },
+    }
+
+    if UnitFactionGroup("Player") == "Horde" then
+        return itemFixesHorde
+    else
+        return itemFixesAlliance
+    end
 end

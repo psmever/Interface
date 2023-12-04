@@ -450,8 +450,20 @@ function QuestieWotlkQuestFixes:Load()
         [10776] = {
             [questKeys.objectives] = {{{19823}},nil,{{31310}}},
         },
+        [10888] = {
+            [questKeys.exclusiveTo] = {13430},
+        },
         [10900] = {
             [questKeys.requiredMaxLevel] = 70,
+        },
+        [10901] = {
+            [questKeys.exclusiveTo] = {13431},
+        },
+        [10958] = {
+            [questKeys.preQuestSingle] = {10949},
+        },
+        [10985] = {
+            [questKeys.exclusiveTo] = {13429},
         },
         [11010] = {
             [questKeys.requiredClasses] = classIDs.WARLOCK + classIDs.ROGUE + classIDs.MAGE + classIDs.PRIEST + classIDs.WARRIOR + classIDs.PALADIN + classIDs.HUNTER + classIDs.SHAMAN + classIDs.DEATH_KNIGHT,
@@ -494,6 +506,12 @@ function QuestieWotlkQuestFixes:Load()
         [11175] = {
             [questKeys.exclusiveTo] = {11176},
         },
+        [11231] = {
+            [questKeys.sourceItemId] = 33284,
+        },
+        [11238] = {
+            [questKeys.sourceItemId] = 33282,
+        },
         [11241] = {
             [questKeys.triggerEnd] = {"Rescue Apothecary Hanes",{[zoneIDs.HOWLING_FJORD]={{78.72,37.23,},},},},
         },
@@ -516,6 +534,9 @@ function QuestieWotlkQuestFixes:Load()
         [11257] = {
             [questKeys.objectives] = {nil,nil,nil,nil,{{{23661,23662,23663,23664,23665,23666,23667,23668,23669,23670},23661,"Winterskorn Vrykul Dismembered"}}},
         },
+        [11267] = {
+            [questKeys.sourceItemId] = 33282,
+        },
         [11279] = {
             [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Spray Proto-Drake Egg"), 0, {{"monster", 23777}}}},
         },
@@ -530,6 +551,9 @@ function QuestieWotlkQuestFixes:Load()
             [questKeys.objectives] = {{{24161,"Oric the Baleful's Corpse Impaled"},{24016,"Ulf the Bloodletter's Corpse Impaled"},{24162,"Gunnar Thorvardsson's Corpse Impaled"}}},
             [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_SLAY, l10n("Slay Vrykul across the Forsaken blockade until they appear"), 0, {{"monster", 24015}}}},
         },
+        [11284] = {
+            [questKeys.sourceItemId] = 33352,
+        },
         [11286] = {
             [questKeys.preQuestSingle] = {},
         },
@@ -543,13 +567,16 @@ function QuestieWotlkQuestFixes:Load()
             [questKeys.preQuestSingle] = {},
         },
         [11300] = {
-            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_SLAY, l10n("Kill gladiators at the Ring of Judgement until Oluf the Violent appears"), 0, {{"monster", 24213},{"monster", 24214},{"monster", 24215}}}},
+            [questKeys.extraObjectives] = {
+                {nil, Questie.ICON_TYPE_SLAY, l10n("Kill gladiators at the Ring of Judgement until Oluf the Violent appears"), 0, {{"monster", 24213},{"monster", 24214},{"monster", 24215}}},
+                {nil, Questie.ICON_TYPE_SLAY, l10n("Kill Oluf the Violent"), 0, {{"monster", 23931}}}
+            },
         },
         [11301] = {
             [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_LOOT, l10n("Use Grick's Bonesaw on corpses of Deranged Explorers"), 0, {{"monster", 23967}}}},
         },
         [11302] = {
-            [questKeys.preQuestSingle] = {11269,11329},
+            [questKeys.preQuestSingle] = {11284},
         },
         [11306] = {
             [questKeys.extraObjectives] = {
@@ -573,9 +600,16 @@ function QuestieWotlkQuestFixes:Load()
         [11319] = {
             [questKeys.objectives] = {{{23876,"Spores frozen"}}},
         },
+        [11322] = {
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Meditate"), 0, {{"object", 186649}}}},
+        },
+        [11329] = {
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Search for Northern Barbfish"), 0, {{"object", 186659}}}},
+        },
         [11332] = {
             [questKeys.sourceItemId] = 33634,
             [questKeys.preQuestSingle] = {11331},
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_TALK, l10n("Get a gryphon to ride and some bombs"), 0, {{"monster", 23859}}}},
         },
         [11335] = {
             [questKeys.triggerEnd] = {"Victory in Arathi Basin", {
@@ -689,26 +723,36 @@ function QuestieWotlkQuestFixes:Load()
             [questKeys.triggerEnd] = {"Secrets of Nifflevar Uncovered",{[zoneIDs.HOWLING_FJORD]={{69.04,54.79,},},},},
         },
         [11346] = {
-            [questKeys.preQuestSingle] = {11269,11329},
+            [questKeys.preQuestSingle] = {11284},
+            [questKeys.sourceItemId] = 33778,
         },
         [11348] = {
             [questKeys.objectives] = {{{23725,"Test Rune of Command on normal Stone Giants"},{24334}}},
+        },
+        [11350] = {
+            [questKeys.sourceItemId] = 33778,
         },
         [11352] = {
             [questKeys.objectives] = {{{23725,"Test Rune of Command on normal Stone Giants"},{24334}}},
         },
         [11355] = {
-            [questKeys.preQuestSingle] = {11269,11329},
-            [questKeys.objectives] = {{{24329,"Runed Stone Giant Corpse Analyzed"},},nil,nil,nil,},
+            [questKeys.preQuestSingle] = {11284},
+            [questKeys.objectives] = {{{23725,"Runed Stone Giant Corpse Analyzed"},},nil,nil,nil,},
         },
         [11358] = {
             [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Use Rune Sample"), 0, {{"object", 186718},}}},
         },
         [11365] = {
-            [questKeys.objectives] = {{{24329,"Runed Stone Giant Corpse Analyzed"},},nil,nil,nil,},
+            [questKeys.objectives] = {{{23725,"Runed Stone Giant Corpse Analyzed"},},nil,nil,nil,},
         },
         [11366] = {
             [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Use Rune Sample"), 0, {{"object", 186718},}}},
+        },
+        [11390] = {
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_TALK, l10n("Mount up"), 0, {{"monster", 24418},}}},
+        },
+        [11391] = {
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_TALK, l10n("Mount up"), 0, {{"monster", 24418},}}},
         },
         [11392] = {
             [questKeys.startedBy] = {nil,{186267}},
@@ -754,7 +798,7 @@ function QuestieWotlkQuestFixes:Load()
             [questKeys.preQuestSingle] = {11316},
         },
         [11429] = {
-            [questKeys.triggerEnd] = {"Alliance Banner Defended",{[zoneIDs.HOWLING_FJORD]={{64.89,40.03,},},},},
+            [questKeys.objectives] = {nil,{{186863,"Alliance Banner Placed"}},nil,nil,{{{24640},24640,"Alliance Banner Defended"}}},
         },
         [11431] = {
             [questKeys.startedBy] = {{24657}},
@@ -764,6 +808,9 @@ function QuestieWotlkQuestFixes:Load()
             [questKeys.triggerEnd] = {"Go Harpoon Surfing",{[zoneIDs.HOWLING_FJORD]={{60.08,62.06,},},},},
             [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_OBJECT, l10n("Go Harpoon Surfing"),0,{{"object",186894}}}},
         },
+        [11448] = {
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_OBJECT, l10n("Ask McGoyver for a ride to the Explorers' League Outpost"),0,{{"monster",24040}}}},
+        },
         [11452] = {
             [questKeys.startedBy] = {{24018},nil,{34090}},
         },
@@ -771,30 +818,54 @@ function QuestieWotlkQuestFixes:Load()
             [questKeys.startedBy] = {{24018},nil,{34091}},
         },
         [11460] = {
-            [questKeys.triggerEnd] = {"Fjord Rock Falcon Fed",{[zoneIDs.HOWLING_FJORD]={{75.26,64.91,},},},},
+            [questKeys.objectives] = {{{24752,"Fjord Rock Falcon Fed"}}},
+        },
+        [11465] = {
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_LOOT, l10n("Send your Trained Rock Falcon after it"), 0, {{"monster", 24746}}}},
         },
         [11466] = {
             [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_TALK, l10n("Talk to Olga"), 0, {{"monster", 24639}}}},
+        },
+        [11467] = {
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_LOOT, l10n("Search for treasure"), 0, {{"object", 186944}}}},
+        },
+        [11468] = {
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_LOOT, l10n("Send your Trained Rock Falcon after it"), 0, {{"monster", 24747}}}},
+        },
+        [11470] = {
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Release the Trained Rock Falcon"), 0, {{"object", 190222}}}},
         },
         [11471] = {
             [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_SLAY, l10n("Fight Jonah"), 0, {{"monster", 24742}}}},
         },
         [11472] = {
-            [questKeys.triggerEnd] = {"Reef Bull led to a Reef Cow",{[zoneIDs.HOWLING_FJORD]={{31.16,71.63,},},},},
-            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Lure Reef Bull with Tasty Reef Fish"), 0, {{"monster", 24786}}}},
+            [questKeys.objectives] = {{{24797,"Reef Bull led to a Reef Cow"}}},
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Lure Reef Bull with Tasty Reef Fish"), 0, {{"monster", 24786},{"monster", 24804}}}},
             [questKeys.reputationReward] = {{1073,500}},
+        },
+        [11475] = {
+            [questKeys.preQuestSingle] = {11244},
         },
         [11478] = {
             [questKeys.exclusiveTo] = {11448},
         },
         [11485] = {
             [questKeys.triggerEnd] = {"Rocket Jump Mastered",{[zoneIDs.HOWLING_FJORD]={{75.08,64.55,},},},},
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Use the Work Bench then cast Rocket Jump standing on the rune next to it"),0,{{"object", 186958}}}},
+        },
+        [11489] = {
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Use the Work Bench then cast Collect Data near the blue relic near Gwendolyn's cart"),0,{{"object", 186958}}}},
         },
         [11491] = {
-            [questKeys.triggerEnd] = {"Lebronski Bluffed",{[zoneIDs.HOWLING_FJORD]={{74.8,65.28,},},},},
+            [questKeys.objectives] = {{{24718,"Lebronski Bluffed"}}},
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Use the Work Bench then cast Bluff on Lebronski after you've walked on his rug"),0,{{"object", 186958}}}},
+        },
+        [11494] = {
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Put on the Golem suit"),0,{{"object", 186958}}}},
         },
         [11495] = {
-            [questKeys.triggerEnd] = {"Thundering Cave investigated",{[zoneIDs.HOWLING_FJORD]={{71.5,69.75,},},},},
+            [questKeys.objectives] = {{{24847,"Thundering Cave investigated"}}},
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Put on the Golem suit"),0,{{"object", 186958}}}},
         },
         [11529] = {
             [questKeys.extraObjectives] = {{{[zoneIDs.HOWLING_FJORD]={{37.2,74.8}}}, Questie.ICON_TYPE_OBJECT, l10n("Use The Big Gun at the front of the ship to slay Sorlof"),0,{{"monster", 24992}}}},
@@ -803,7 +874,10 @@ function QuestieWotlkQuestFixes:Load()
             [questKeys.specialFlags] = 1,
         },
         [11567] = {
-            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Ask Alanya for transportation"),0,{{"monster", 27933}}}},
+            [questKeys.extraObjectives] = {
+                {nil, Questie.ICON_TYPE_TALK, l10n("Ask Alanya for transportation"),0,{{"monster", 27933}}},
+                {nil, Questie.ICON_TYPE_TALK, l10n("After acquiring the Armor, get a ride back"),0,{{"monster", 28277}}},
+            },
         },
         [11569] = {
             [questKeys.preQuestSingle] = {11571},
@@ -1041,6 +1115,9 @@ function QuestieWotlkQuestFixes:Load()
                 {{[zoneIDs.BOREAN_TUNDRA]={{22,22.6}}}, Questie.ICON_TYPE_EVENT, l10n("Use Arcane Power Focus"),},
             },
         },
+        [11959] = {
+            [questKeys.objectives] = {{{26196,"Loguhn's Blood Smeared"}}},
+        },
         [11960] = {
             [questKeys.reputationReward] = {{1073,500}},
         },
@@ -1063,6 +1140,12 @@ function QuestieWotlkQuestFixes:Load()
             [questKeys.extraObjectives] = {
                 {nil, Questie.ICON_TYPE_EVENT, l10n("Use the Dull Carving Knife near Drakuru"),0,{{"monster", 26423}}},
             },
+        },
+        [11995] = {
+            [questKeys.exclusiveTo] = {12439},
+        },
+        [12000] = {
+            [questKeys.preQuestSingle] = {},
         },
         [12007] = {
             [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_EVENT, l10n("Drink Drakuru's Elixir after gathering Zim'bo's Mojo"),0,{{"object", 400047}}}},
@@ -1277,7 +1360,7 @@ function QuestieWotlkQuestFixes:Load()
             },
         },
         [12157] = {
-            [questKeys.exclusiveTo] = {12171,12174,12235,12297},
+            [questKeys.exclusiveTo] = {12171,12235,12297},
         },
         [12159] = {
             [questKeys.objectives] = {{{26891,"Miner at Rest"}}},
@@ -1286,10 +1369,10 @@ function QuestieWotlkQuestFixes:Load()
             [questKeys.objectives] = {{{26616,"Blighted Elk's corpse cleansed"},{26643,"Rabid Grizzly's corpse cleansed"},},nil,nil,nil,},
         },
         [12171] = {
-            [questKeys.exclusiveTo] = {12174,12235,12297},
+            [questKeys.exclusiveTo] = {12235,12297},
         },
         [12174] = {
-            [questKeys.exclusiveTo] = {12235},
+            [questKeys.exclusiveTo] = {12235,12298},
         },
         [12180] = {
             [questKeys.preQuestSingle] = {12014},
@@ -1478,7 +1561,10 @@ function QuestieWotlkQuestFixes:Load()
         },
         [12297] = {
             [questKeys.preQuestSingle] = {11250},
-            [questKeys.exclusiveTo] = {12157},
+            [questKeys.exclusiveTo] = {12171,12235},
+        },
+        [12298] = {
+            [questKeys.exclusiveTo] = {12174,12235},
         },
         [12301] = {
             [questKeys.triggerEnd] = {"The Forgotten Redeemed",{[zoneIDs.DRAGONBLIGHT]={{86.86,66.18,},},},},
@@ -1555,7 +1641,7 @@ function QuestieWotlkQuestFixes:Load()
             [questKeys.objectivesText] = {"Speak with Lord Devrestrasz at Wyrmrest Temple."},
         },
         [12439] = {
-            [questKeys.exclusiveTo] = {12000},
+            [questKeys.exclusiveTo] = {11995,12000},
         },
         [12446] = {
             [questKeys.specialFlags] = 1,
@@ -3441,7 +3527,12 @@ function QuestieWotlkQuestFixes:Load()
             [questKeys.exclusiveTo] = {14181,14182,14183},
         },
         [13429] = {
-            [questKeys.triggerEnd] = {"Help Akama and Maiev enter the Black Temple.",{[zoneIDs.SHADOWMOON_VALLEY]={{71.02,46.12,},},},},
+            [questKeys.triggerEnd] = {"Help Akama and Maiev enter the Black Temple.", {[zoneIDs.SHADOWMOON_VALLEY]={{71.05,46.11},{66.29,44.06}}}},
+            [questKeys.exclusiveTo] = {10985},
+            [questKeys.startedBy] = {{18528}},
+            [questKeys.finishedBy] = {{18528}},
+            [questKeys.preQuestSingle] = {10949},
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_TALK, l10n("Let Xi'ri know you're ready to battle"), 1, {{"monster", 18528}}}},
         },
         [13430] = {
             [questKeys.exclusiveTo] = {10888},
@@ -3768,6 +3859,9 @@ function QuestieWotlkQuestFixes:Load()
             [questKeys.exclusiveTo] = {13699,13600,13616,13741,13742,13743,13746,13747,13748,13757,13758,13759,13752,13753,13754},
             [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_TALK, l10n("Use Warts-B-Gone Lip Balm and /kiss a Lake Frog"), 0, {{"monster", 33224}}}},
             [questKeys.requiredRaces] = raceIDs.ALL_ALLIANCE,
+        },
+        [13604] = {
+            [questKeys.startedBy] = {{32867,32927},nil,{45506}},
         },
         [13607] = {
             [questKeys.triggerEnd] = {"Entrance to Celestial Planetarium located",{[zoneIDs.THE_ARCHIVUM]={{60,46.3}},[zoneIDs.ULDUAR]={{-1,-1}}}},
@@ -4372,6 +4466,7 @@ function QuestieWotlkQuestFixes:Load()
         },
         [13817] = {
             [questKeys.preQuestSingle] = {},
+            [questKeys.startedBy] = {{32867,32927},nil,{45857}},
         },
         [13819] = {
             [questKeys.startedBy] = {{32871},nil,{46053}},
@@ -4936,6 +5031,12 @@ function QuestieWotlkQuestFixes:Load()
         [14421] = {
             [questKeys.requiredRaces] = raceIDs.UNDEAD,
         },
+        [14444] = {
+            [questKeys.objectives] = {{{27990,"Ask Krasus about the hilt's origins"}}},
+        },
+        [20438] = {
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_TALK, l10n("Ask Shandy Glossgleam to lend you a tabard"), 0, {{"monster", 36856}}}},
+        },
         [24216] = {
             [questKeys.triggerEnd] = {"Victory in Warsong Gulch", {
                 [zoneIDs.ORGRIMMAR]={{80.68,30.51},{36.94,65.36}},
@@ -5114,8 +5215,22 @@ function QuestieWotlkQuestFixes:Load()
             [questKeys.requiredMaxLevel] = 60,
             [questKeys.exclusiveTo] = {24223,24224},
         },
+        [24428] = {
+            [questKeys.startedBy] = {{10184},nil,{49644}},
+            [questKeys.requiredRaces] = raceIDs.ALL_ALLIANCE,
+        },
+        [24429] = {
+            [questKeys.startedBy] = {{10184},nil,{49643}},
+        },
         [24431] = {
             [questKeys.specialFlags] = 1,
+        },
+        [24461] = {
+            [questKeys.sourceItemId] = 49723,
+        },
+        [24535] = {
+            [questKeys.objectives] = {{{37205,"Thalorien's Blessing obtained"}}},
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_OBJECT, l10n("Examine the remains"), 0, {{"monster", 37552}}}},
         },
         [24536] = {
             [questKeys.objectives] = {{{3296}}},
@@ -5126,6 +5241,35 @@ function QuestieWotlkQuestFixes:Load()
         },
         [24547] = {
             [questKeys.extraObjectives] = {{{[zoneIDs.ICECROWN_CITADEL]={{-1,-1}}}, Questie.ICON_TYPE_SLAY, l10n("Slay 1000 enemies in Icecrown Citadel while Shadow's Edge is equipped"), 0}},
+        },
+        [24553] = {
+            [questKeys.requiredClasses] = classIDs.WARRIOR + classIDs.PALADIN + classIDs.ROGUE + classIDs.HUNTER + classIDs.DEATH_KNIGHT + classIDs.MAGE + classIDs.WARLOCK,
+            [questKeys.requiredSourceItems] = {49879},
+            [questKeys.extraObjectives] = {
+                {nil, Questie.ICON_TYPE_TALK, l10n("Ask the warden to take you to the Sunwell"), 0, {{"monster", 37523}}},
+                {nil, Questie.ICON_TYPE_EVENT, l10n("After restoring Quel'Delar, go back to Dalaran"), 0, {{"object", 194481}}},
+            },
+        },
+        [24555] = {
+            [questKeys.objectives] = {{{27990,"Ask Krasus about the hilt's origins"}}},
+        },
+        [24556] = {
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_TALK, l10n("Ask Shandy Glossgleam to lend you a tabard"), 0, {{"monster", 36856}}}},
+        },
+        [24559] = {
+            [questKeys.sourceItemId] = 49723,
+        },
+        [24563] = {
+            [questKeys.objectives] = {{{37205,"Thalorien's Blessing obtained"}}},
+            [questKeys.extraObjectives] = {{nil, Questie.ICON_TYPE_OBJECT, l10n("Examine the remains"), 0, {{"monster", 37552}}}},
+        },
+        [24564] = {
+            [questKeys.requiredRaces] = raceIDs.UNDEAD + raceIDs.ORC + raceIDs.TROLL + raceIDs.TAUREN,
+            [questKeys.requiredClasses] = classIDs.WARRIOR + classIDs.PALADIN + classIDs.ROGUE + classIDs.HUNTER + classIDs.DEATH_KNIGHT + classIDs.MAGE + classIDs.WARLOCK,
+            [questKeys.extraObjectives] = {
+                {nil, Questie.ICON_TYPE_TALK, l10n("Ask the warden to take you to the Sunwell"), 0, {{"monster", 37523}}},
+                {nil, Questie.ICON_TYPE_EVENT, l10n("After restoring Quel'Delar, go back to Dalaran"), 0, {{"object", 194481}}},
+            },
         },
         [24579] = {
             [questKeys.exclusiveTo] = {24580,24581,24582,24583,24584,24585,24586,24587,24588,24589,24590},
@@ -5163,8 +5307,40 @@ function QuestieWotlkQuestFixes:Load()
         [24590] = {
             [questKeys.exclusiveTo] = {24579,24580,24581,24582,24583,24584,24585,24586,24587,24588,24589},
         },
+        [24594] = {
+            [questKeys.requiredRaces] = raceIDs.BLOOD_ELF,
+            [questKeys.requiredClasses] = classIDs.WARRIOR + classIDs.PALADIN + classIDs.ROGUE + classIDs.HUNTER + classIDs.DEATH_KNIGHT + classIDs.MAGE + classIDs.WARLOCK,
+            [questKeys.extraObjectives] = {
+                {nil, Questie.ICON_TYPE_TALK, l10n("Ask the warden to take you to the Sunwell"), 0, {{"monster", 37523}}},
+                {nil, Questie.ICON_TYPE_EVENT, l10n("After restoring Quel'Delar, go back to Dalaran"), 0, {{"object", 194481}}},
+            },
+        },
+        [24595] = {
+            [questKeys.requiredClasses] = classIDs.DRUID + classIDs.PRIEST + classIDs.SHAMAN,
+            [questKeys.requiredSourceItems] = {49879},
+            [questKeys.extraObjectives] = {
+                {nil, Questie.ICON_TYPE_TALK, l10n("Ask the warden to take you to the Sunwell"), 0, {{"monster", 37523}}},
+                {nil, Questie.ICON_TYPE_EVENT, l10n("After restoring Quel'Delar, go back to Dalaran"), 0, {{"object", 194481}}},
+            },
+        },
+        [24596] = {
+            [questKeys.requiredRaces] = raceIDs.BLOOD_ELF,
+            [questKeys.requiredClasses] = classIDs.DRUID + classIDs.PRIEST + classIDs.SHAMAN,
+            [questKeys.extraObjectives] = {
+                {nil, Questie.ICON_TYPE_TALK, l10n("Ask the warden to take you to the Sunwell"), 0, {{"monster", 37523}}},
+                {nil, Questie.ICON_TYPE_EVENT, l10n("After restoring Quel'Delar, go back to Dalaran"), 0, {{"object", 194481}}},
+            },
+        },
         [24597] = {
             [questKeys.requiredRaces] = raceIDs.ALL_ALLIANCE,
+        },
+        [24598] = {
+            [questKeys.requiredRaces] = raceIDs.UNDEAD + raceIDs.ORC + raceIDs.TROLL + raceIDs.TAUREN,
+            [questKeys.requiredClasses] = classIDs.DRUID + classIDs.PRIEST + classIDs.SHAMAN,
+            [questKeys.extraObjectives] = {
+                {nil, Questie.ICON_TYPE_TALK, l10n("Ask the warden to take you to the Sunwell"), 0, {{"monster", 37523}}},
+                {nil, Questie.ICON_TYPE_EVENT, l10n("After restoring Quel'Delar, go back to Dalaran"), 0, {{"object", 194481}}},
+            },
         },
         [24609] = {
             [questKeys.requiredRaces] = raceIDs.ALL_ALLIANCE,
@@ -5335,6 +5511,28 @@ function QuestieWotlkQuestFixes:Load()
         },
         [24793] = {
             [questKeys.preQuestSingle] = {24576},
+        },
+        [24795] = {
+            [questKeys.requiredClasses] = classIDs.DRUID + classIDs.PRIEST + classIDs.SHAMAN,
+        },
+        [24796] = {
+            [questKeys.requiredClasses] = classIDs.WARRIOR + classIDs.PALADIN + classIDs.ROGUE + classIDs.HUNTER + classIDs.DEATH_KNIGHT + classIDs.MAGE + classIDs.WARLOCK,
+        },
+        [24798] = {
+            [questKeys.requiredRaces] = raceIDs.BLOOD_ELF,
+            [questKeys.requiredClasses] = classIDs.DRUID + classIDs.PRIEST + classIDs.SHAMAN,
+        },
+        [24799] = {
+            [questKeys.requiredRaces] = raceIDs.UNDEAD + raceIDs.ORC + raceIDs.TROLL + raceIDs.TAUREN,
+            [questKeys.requiredClasses] = classIDs.DRUID + classIDs.PRIEST + classIDs.SHAMAN,
+        },
+        [24800] = {
+            [questKeys.requiredRaces] = raceIDs.BLOOD_ELF,
+            [questKeys.requiredClasses] = classIDs.WARRIOR + classIDs.PALADIN + classIDs.ROGUE + classIDs.HUNTER + classIDs.DEATH_KNIGHT + classIDs.MAGE + classIDs.WARLOCK,
+        },
+        [24801] = {
+            [questKeys.requiredRaces] = raceIDs.UNDEAD + raceIDs.ORC + raceIDs.TROLL + raceIDs.TAUREN,
+            [questKeys.requiredClasses] = classIDs.WARRIOR + classIDs.PALADIN + classIDs.ROGUE + classIDs.HUNTER + classIDs.DEATH_KNIGHT + classIDs.MAGE + classIDs.WARLOCK,
         },
         [24803] = {
             [questKeys.specialFlags] = 1,

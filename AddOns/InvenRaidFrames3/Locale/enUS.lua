@@ -114,6 +114,7 @@ L["lime_survival_방벽"] = "Wall" -- "Shield Wall"
 L["lime_survival_최저"] = "Stand" -- "Last Stand"
 L["lime_survival_투혼"] = "Sword" -- "Die by the Sword"
 L["lime_survival_주반"] = "Refl" -- "Spell Reflection"
+L["lime_survival_분노재생"] = "Enraged Regeneration"
 L["lime_survival_격재"] = "Enrage" -- "Enraged Regeneration"
 L["lime_survival_쇠날"] = "Ravage" -- "Ravager"
 

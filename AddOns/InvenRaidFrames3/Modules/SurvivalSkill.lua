@@ -7,7 +7,7 @@ local L = LibStub("AceLocale-3.0"):GetLocale("IRF3")
 -- 직업별 생존기 정의 (*는 타인에게 걸 수 있는 생존기)
 local SL = IRF3.GetSpellName
 local skills = {	-- 7.2.5
-	["WARRIOR"] = { [SL(871)] = L["lime_survival_방벽"], [SL(12975)] = L["lime_survival_최저"],  [SL(23920)] = L["lime_survival_주반"] },
+	["WARRIOR"] = { [SL(871)] = L["lime_survival_방벽"], [SL(12975)] = L["lime_survival_최저"],  [SL(23920)] = L["lime_survival_주반"] , [SL(55694)] = L["lime_survival_분노재생"] }
 	["ROGUE"] = { [SL(5277)] = L["lime_survival_회피"], [SL(31224)] = L["lime_survival_그망"], [SL(1966)] = L["lime_survival_교란"], [SL(11327)] = L["lime_survival_소멸"]},
 	["PALADIN"] = { [SL(642)] = L["lime_survival_무적"], [SL(498)] = L["lime_survival_가호"], [SL(31850)] = L["lime_survival_헌수"], [SL(31821)] = L["lime_survival_오숙"], [SL(64205)] =L["lime_survival_성희"] ,[SL(70940)]=L["lime_survival_천수"] },
 	["MAGE"] = { [SL(45438)] = L["lime_survival_얼방"], [SL(32612)] = L["lime_survival_투명"]},

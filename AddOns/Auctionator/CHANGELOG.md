@@ -1,6 +1,7 @@
 # Auctionator
 
-## [10.2.1](https://github.com/Auctionator/Auctionator/tree/10.2.1) (2023-11-19)
-[Full Changelog](https://github.com/Auctionator/Auctionator/compare/10.2.0...10.2.1) 
+## [10.2.3](https://github.com/Auctionator/Auctionator/tree/10.2.3) (2023-12-01)
+[Full Changelog](https://github.com/Auctionator/Auctionator/compare/10.2.2...10.2.3) 
 
-- Allow posting when user has 0g and is posting an item with a 0g deposit  
+- [Fixes #1459] Retail: Crafting Info: Error when search enchant dreaming devotion  
+- Crafting Info: Add new enchants for 10.2 for AH search  

@@ -544,10 +544,17 @@ IRF3_RaidCheck:RegisterEvent("READY_CHECK");
 function IRF3_RaidCheck:OnEvent(event, addon)
 	if event == "READY_CHECK" then
 		if IRF3.db.units.RaidCheck then
-			loadData();
+--			loadData();
 			announce();
 		end
 	end
+end
+
+
+function IRF3_RaidCheckFunc()
+
+	announce();
+
 end
 
 
