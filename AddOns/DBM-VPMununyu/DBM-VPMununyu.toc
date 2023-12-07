@@ -1,0 +1,16 @@
+﻿## Interface: 100200
+## X-Min-Interface: 100200
+## X-Min-Interface-Classic: 11404
+## X-Min-Interface-Wrath: 30403
+## Title:|cffffe00a<|r|cffff7d0aDBM Media|r|cffffe00a>|r |cff308530Voicepack mununyu|r
+## Title-koKR:|cffffe00a<|r|cffff7d0aDBM Media|r|cffffe00a>|r |cff308530음성팩 무뉴뉴|r
+## DefaultState: enabled
+## RequiredDeps: DBM-Core
+## Author: mununyu
+## Version: 2.63
+## IconTexture: Interface\AddOns\DBM-VPMununyu\mununyu_icon.tga
+## X-DBM-Voice: 1
+## X-DBM-Voice-Name: 무뉴뉴 (Korean Female)
+## X-DBM-Voice-ShortName: Mununyu
+## X-DBM-Voice-Version: 15
+## X-DBM-Voice-HasCount: 1
